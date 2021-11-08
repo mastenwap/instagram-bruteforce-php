@@ -58,7 +58,7 @@ function test($username,$password)
 	if (preg_match("/userId/", $result)) 
 	{
 		$file = fopen('LogBruteForce.txt', 'a+') or die ("gabisa di buka bosque !");
-		$isi  = $username." ".$password;
+		$isi  = $username." ".$password."\n";
 		fwrite($file, $isi);
 		fclose($file); 
 		echo "\n\n\nPassword Di Temukan\n\n";
