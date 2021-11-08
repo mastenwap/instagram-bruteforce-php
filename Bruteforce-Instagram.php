@@ -28,7 +28,6 @@ function test($username,$password)
 {	
 	global $loop;
 	$ch = curl_init();
-	echo "$username $password";
 	curl_setopt($ch, CURLOPT_URL, "https://www.instagram.com/accounts/login/ajax/");
 
 	date_default_timezone_set('Australia/Melbourne');
