@@ -89,7 +89,7 @@ $loop = 1 ;
 if ($handle and $loop <= 1) {
 	while (($line = fgets($handle)) !== false)
 	{
-		$total=count($line)*5;
+		$total=1000*5;
 		for ($i=0; $i<$total; $i++)
 		{
 			$percentage = $i / $total * 100;
