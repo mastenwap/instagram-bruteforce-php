@@ -65,6 +65,14 @@ function test($username,$password)
 		echo "Username : $username\n";
 		echo "Password : $password\n";
 		$loop = 2;
+	}else{
+	        $total=1000*5;
+		for ($i=0; $i<$total; $i++)
+		{
+			$percentage = $i / $total * 100;
+			showProgressBar($percentage, 2);
+		}
+		print PHP_EOL;
 	}
 }
 
@@ -89,13 +97,6 @@ $loop = 1 ;
 if ($handle and $loop <= 1) {
 	while (($line = fgets($handle)) !== false)
 	{
-		$total=1000*5;
-		for ($i=0; $i<$total; $i++)
-		{
-			$percentage = $i / $total * 100;
-			showProgressBar($percentage, 2);
-		}
-		print PHP_EOL;
 		$pw = trim($line);
 		test($username,$pw);
 	}
